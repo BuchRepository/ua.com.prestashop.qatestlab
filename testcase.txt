@@ -1,0 +1,54 @@
+Preconditions:
+1. Open http://prestashop.qatestlab.com.ua/
+2. Login as adbetnet2016@gmail.com // samsung
+
+
+ID: 1
+Summary: Add dress to basket
+
+Steps:
+1) Go to the "Women" item menu
+2) Open to the "T-shirts" dictionary
+3) Click on the "Add to cart" button on the first item from "T-shirts" list
+7) Check appear "Product successfully added to your shopping cart" notification.
+
+Expected result: The T-shirt is added on the basket
+
+ID: 2
+Summary: Delete item from basket
+
+Steps:
+1) Go to the "Women" item menu
+2) Open to the "T-shirts" dictionary
+3) Click on the "Add to cart" button on the first item from "T-shirts" list
+4) Click “Proceed to checkout» button
+5) Click on the "Cart" pictogram opposite select item
+6) Check that select item isn’t displayed on the “Cart”
+
+Expected result: The select item is deleted on the “Cart” after clicking “Cart” pictogram
+
+ID: 3
+Summary: Change a site language
+
+Steps:
+1) Click on the drop-down list on top site near the “Contact us” link
+2) Change a language on other
+3) Check that the language has changed
+
+Expected result: The site language is changed after change language on “Language” drop-down.
+
+ID: 4
+Summary: Create an account with the valid data
+
+Steps:
+1) Click on the "Sign in" button on top site
+2) Input the valid data to “Email address” field
+3) Click on the "Create an account" button
+4) Input the valid data to “First name” field
+5) Input the valid data to “Last name” field
+6) Input the valid data to “Email” field
+7) Input the valid data to “Password” field
+8) Click on the "Register" button
+9) Check that the “Your account has been created” notification is showed
+
+Expected result: The new account is created on the "Authentication" form after inputting valid data.
