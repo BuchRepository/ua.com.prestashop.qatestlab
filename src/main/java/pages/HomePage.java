@@ -9,38 +9,33 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends ParentPage {
 
-    @FindBy(xpath = ".//li[@id='dictionary']")
-    private WebElement menuDictionary;
-    @FindBy(xpath = ".//li[@id='spares']")
-    private WebElement subMenuSpare;
-    @FindBy(xpath = ".//li[@id='prov_cus']")
-    private WebElement subMenuProviders;
-    @FindBy(xpath = ".//*[@class='pull-left image']")
-    private WebElement avatar;
-
-
     public HomePage(WebDriver webDriver) {
         super(webDriver, "/");
     }
 
-    public boolean isAvatarPresent() {
-        return actionsWithOutElements.isElementDisplayed(avatar);
+    @FindBy (xpath = ".//a[@class=\"login\"]")
+    private WebElement signIn;
+
+    public void openPage(){
+        try{
+            webDriver.get("http://prestashop.qatestlab.com.ua/en/");
+            logger.info("Login page is opened");
+        } catch (Exception e){
+            logger.error("Can't open LoginPage");
+            Assert.fail("Can't open LoginPage");
+        }
+
     }
 
-    public void checkIsAvatarDisplayed() {
-        Assert.assertTrue("Avatar isn't present", isAvatarPresent());
-    }
+    public void clickOnSignOn (){
+        try{
+            signIn.click();
+            logger.info("Sign in was clicked");
+        } catch (Exception e){
+            logger.error("Sign in isn't work");
+            Assert.fail("Sign in isn't work");
+        }
 
-    public void clickOnDictionary() {
-        actionsWithOutElements.clickOnElement(menuDictionary);
-    }
-
-    public void clickOnSubMenuSpare() {
-        actionsWithOutElements.clickOnElement(subMenuSpare);
-    }
-
-    public void clickOnSubMenuProviders() {
-        actionsWithOutElements.clickOnElement(subMenuProviders);
     }
 
 }
