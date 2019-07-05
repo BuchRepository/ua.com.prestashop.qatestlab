@@ -18,12 +18,14 @@ public class ParentTest {
 
     @Before
     public  void before(){
-        File file = new File("./src/newdrivers/chromedriver.exe");
+        //Path to chromesriver.exe for Java
+        File file = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 
         webDriver = new ChromeDriver();
-
+        //Show the window in max. size
         webDriver.manage().window().maximize();
+        //Set default wait open
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         loginPage= new LoginPage(webDriver);

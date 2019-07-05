@@ -12,16 +12,16 @@ abstract public class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     ActionWithOutElements actionsWithOutElements;
-    final String BASE_URL = "http://v3.test.itpmgroup.com";
+    final String BASE_URL = "http://prestashop.qatestlab.com.ua/en/";
     String expectedURL;
 
     public ParentPage(WebDriver webDriver, String partURL) {
-
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         actionsWithOutElements = new ActionWithOutElements(webDriver);
         expectedURL = BASE_URL+partURL;
     }
+
     public void checkIfPageOpen () {
         try {
             logger.info(expectedURL);
@@ -32,6 +32,9 @@ abstract public class ParentPage {
             Assert.fail ("Can't get url");
         }
     }
+
+
+
 
 
 
