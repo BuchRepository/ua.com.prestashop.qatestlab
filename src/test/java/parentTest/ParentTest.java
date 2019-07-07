@@ -1,10 +1,13 @@
 package parentTest;
 
+import addToCart.AddToCart;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
 import pages.*;
 
 import java.io.File;
@@ -14,6 +17,9 @@ public class ParentTest {
     protected WebDriver webDriver;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected TshirtPage tShirtPage;
+    protected CartPage cartPage;
+
 
 
     @Before
@@ -30,7 +36,8 @@ public class ParentTest {
 
         loginPage= new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
-
+        tShirtPage = new TshirtPage(webDriver);
+        cartPage = new CartPage(webDriver);
     }
 
     @After
@@ -46,5 +53,17 @@ public class ParentTest {
 //    public void checkExpectedResult (String message, boolean actualResult){
 ////        checkExpectedResult();
 ////    }
+
+    @Test
+    public void addToCart(){
+        homePage.openPage();
+        homePage.clickToTShirtItemMenu();
+        tShirtPage.clickToFirstTShirt();
+        tShirtPage.clickAddToCart();
+        tShirtPage.checkAddToCart();
+        tShirtPage.clickProceedToCheckOut();
+
+
+    }
 
 }

@@ -5,17 +5,20 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionWithOutElements {
     WebDriver webDriver;
+
     Logger logger = Logger.getLogger(getClass());
 
 
     public ActionWithOutElements(WebDriver webDriver) {
         this.webDriver = webDriver;
+
     }
 
     public void enterTextToInput(WebElement element, String text) {
@@ -33,10 +36,23 @@ public class ActionWithOutElements {
         try {
             element.click();
             logger.info("Element was clicked");
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Element can't clicked");
             Assert.fail("Element can't clicked");
         }
 
     }
+
+
+    public void isDisplayed(WebElement element) {
+        try {
+            element.isDisplayed();
+            logger.info("Element was displayed");
+        } catch (Exception e) {
+            logger.error("Element can't displayed");
+            Assert.fail("Element can't displayed");
+        }
+    }
+
+
 }

@@ -22,7 +22,7 @@ Steps:
 2) Open to the "T-shirts" dictionary
 3) Click on the "Add to cart" button on the first item from "T-shirts" list
 4) Click “Proceed to checkout» button
-5) Click on the "Cart" pictogram opposite select item
+5) Click on the "Garbage" pictogram opposite select item
 6) Check that select item isn’t displayed on the “Cart”
 
 Expected result: The select item is deleted on the “Cart” after clicking “Cart” pictogram
@@ -38,17 +38,13 @@ Steps:
 Expected result: The site language is changed after change language on “Language” drop-down.
 
 ID: 4
-Summary: Create an account with the valid data
+Summary: Authentication with the valid data
 
 Steps:
 1) Click on the "Sign in" button on top site
 2) Input the valid data to “Email address” field
-3) Click on the "Create an account" button
-4) Input the valid data to “First name” field
-5) Input the valid data to “Last name” field
-6) Input the valid data to “Email” field
-7) Input the valid data to “Password” field
-8) Click on the "Register" button
-9) Check that the “Your account has been created” notification is showed
+3) Input the valid data to “Password” field
+4) Click on the "Sign in" button
+5) Check that the “My account” page is opened
 
-Expected result: The new account is created on the "Authentication" form after inputting valid data.
+Expected result: The "My account" is opened after inputting valid data to authentication form.
