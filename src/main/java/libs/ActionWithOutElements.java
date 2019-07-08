@@ -6,18 +6,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionWithOutElements {
     WebDriver webDriver;
+    Actions action;
 
     Logger logger = Logger.getLogger(getClass());
 
 
     public ActionWithOutElements(WebDriver webDriver) {
         this.webDriver = webDriver;
+        action = new Actions(webDriver);
 
     }
 
@@ -43,7 +46,6 @@ public class ActionWithOutElements {
 
     }
 
-
     public void isDisplayed(WebElement element) {
         try {
             element.isDisplayed();
@@ -54,5 +56,14 @@ public class ActionWithOutElements {
         }
     }
 
+    public void moveToElement(WebElement element) {
+        try {
+            action.moveToElement(element).perform();
+            logger.info("Element was displayed");
+        } catch (Exception e) {
+            logger.error("Element can't displayed");
+            Assert.fail("Element can't displayed");
+        }
+    }
 
 }

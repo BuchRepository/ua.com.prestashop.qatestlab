@@ -16,13 +16,14 @@ public class HomePage extends ParentPage {
 
     }
 
-
-
     @FindBy(xpath = ".//a[@class=\"login\"]")
     private WebElement signIn;
 
     @FindBy(xpath = ".//a[@title='T-shirts']")
     private WebElement tShirtMenuItem;
+
+    @FindBy(xpath = ".//a[@title='Women']")
+    private WebElement womenMenuItem;
 
     public void openPage() {
         try {
@@ -45,8 +46,11 @@ public class HomePage extends ParentPage {
         }
     }
 
-
     public void clickToTShirtItemMenu() {
         actionsWithOutElements.clickToElement(tShirtMenuItem);
+    }
+
+    public void moveToWomenItem(){
+        actionsWithOutElements.moveToElement(womenMenuItem);
     }
 }
