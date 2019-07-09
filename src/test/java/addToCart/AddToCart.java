@@ -9,8 +9,10 @@ public class AddToCart extends ParentTest {
     public void addToCart(){
         homePage.openPage();
         homePage.moveToWomenItem();
+        homePage.moveToTShirtItemMenu();
         homePage.clickToTShirtItemMenu();
-
+        tShirtPage.clickToFirstTShirt();
+        tShirtPage.clickAddToCart();
 
 
     }

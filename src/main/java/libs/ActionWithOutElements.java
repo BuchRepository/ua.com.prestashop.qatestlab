@@ -59,10 +59,10 @@ public class ActionWithOutElements {
     public void moveToElement(WebElement element) {
         try {
             action.moveToElement(element).perform();
-            logger.info("Element was displayed");
+            logger.info("Element was moved");
         } catch (Exception e) {
-            logger.error("Element can't displayed");
-            Assert.fail("Element can't displayed");
+            logger.error("Element can't moved");
+            Assert.fail("Element can't moved");
         }
     }
 
