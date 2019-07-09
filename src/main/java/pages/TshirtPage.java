@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class TshirtPage extends ParentPage{
 
-    @FindBy (xpath = ".//img[@class='replace-2x img-responsive']")
+    @FindBy (xpath = ".//img[@title='Faded Short Sleeve T-shirts']")
     private WebElement firstItemTShirtList;
 
-    @FindBy (xpath = ".//button[@name='Submit']")
+    @FindBy (xpath = ".//name[text()='Submit']")
     private WebElement addToCart;
 
     @FindBy (xpath = ".//i[@class='icon-ok']")
