@@ -9,14 +9,21 @@ public class TshirtPage extends ParentPage{
     @FindBy (xpath = ".//img[@title='Faded Short Sleeve T-shirts']")
     private WebElement firstItemTShirtList;
 
-    @FindBy (xpath = ".//name[text()='Submit']")
+    @FindBy (xpath = ".//a[@class='button ajax_add_to_cart_button btn btn-default' and @data-id-product='1']")
     private WebElement addToCart;
 
     @FindBy (xpath = ".//i[@class='icon-ok']")
     private WebElement iconOk;
 
-    @FindBy (xpath = ".//i[@class='icon-chevron-right right']")
+    @FindBy (xpath = ".//a[@class='btn btn-default button button-medium']")
     private WebElement proceedToCheckout;
+
+    @FindBy (xpath = ".//i[@class='icon-th-list']")
+    private WebElement list;
+
+    @FindBy (xpath = ".//span[@class='cross']")
+    private WebElement cross;
+
 
     public TshirtPage(WebDriver webDriver) {
         super(webDriver, "5-tshirts");
@@ -37,5 +44,13 @@ public class TshirtPage extends ParentPage{
 
     public void clickProceedToCheckOut() {
         actionsWithOutElements.clickToElement(proceedToCheckout);
+    }
+
+    public void clickList() {
+        actionsWithOutElements.clickToElement(list);
+    }
+
+    public void closedCartWindow() {
+        actionsWithOutElements.clickToElement(cross);
     }
 }

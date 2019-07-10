@@ -12,6 +12,7 @@ public class CartPage extends ParentPage {
     @FindBy(xpath = ".//tr[@id='product_1_1_0_0']")
     private WebElement firstItemInCart;
 
+
     public CartPage(WebDriver webDriver) {
         super(webDriver, "order");
     }
@@ -24,5 +25,11 @@ public class CartPage extends ParentPage {
     public void checkDeletedFromCart() {
         actionsWithOutElements.isDisplayed(firstItemInCart);
     }
+
+    public boolean isTShirtInList() {
+        return  actionsWithOutElements.isDisplayed(firstItemInCart);
+
+    }
+
 
 }

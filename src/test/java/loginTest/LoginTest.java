@@ -19,8 +19,6 @@ public class LoginTest extends ParentTest {
         loginPage.enterEmailAddressToEmailField();
         loginPage.enterPasswordToPasswordField();
         loginPage.clickToSignIn();
-
-
     }
 
 

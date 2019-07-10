@@ -46,7 +46,7 @@ public class ActionWithOutElements {
 
     }
 
-    public void isDisplayed(WebElement element) {
+   /* public void isDisplayed(WebElement element) {
         try {
             element.isDisplayed();
             logger.info("Element was displayed");
@@ -54,7 +54,19 @@ public class ActionWithOutElements {
             logger.error("Element can't displayed");
             Assert.fail("Element can't displayed");
         }
+    }*/
+
+    public boolean isDisplayed(WebElement element) {
+        try {
+            logger.info("Element was displayed");
+            return  element.isDisplayed();
+        } catch (Exception e) {
+            logger.error("Element can't displayed");
+            Assert.fail("Element can't displayed");
+            return false;
+        }
     }
+
 
     public void moveToElement(WebElement element) {
         try {
