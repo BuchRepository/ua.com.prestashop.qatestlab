@@ -24,6 +24,10 @@ public class TshirtPage extends ParentPage{
     @FindBy (xpath = ".//span[@class='cross']")
     private WebElement cross;
 
+    @FindBy (xpath= ".//div[@class='shopping_cart']")
+    //@FindBy (xpath = "/html/body/div/div/header/div/div/div/div/div[@class='shopping_cart']")
+    private WebElement cart;
+
 
     public TshirtPage(WebDriver webDriver) {
         super(webDriver, "5-tshirts");
@@ -52,5 +56,9 @@ public class TshirtPage extends ParentPage{
 
     public void closedCartWindow() {
         actionsWithOutElements.clickToElement(cross);
+    }
+
+    public void clickToCart() {
+        actionsWithOutElements.clickToElement(cart);
     }
 }

@@ -8,10 +8,18 @@ import parentTest.ParentTest;
 public class DeleteFromCart extends ParentTest {
 
     @Test
-    public void addToCart(){
-        DeleteFromCart.super.addToCart();
+    public void deleteFromCart(){
+        homePage.openPage();
+        homePage.moveToWomenItem();
+        homePage.moveToTShirtItemMenu();
+        homePage.clickToTShirtItemMenu();
+        tShirtPage.clickList();
+        tShirtPage.clickAddToCart();
+        tShirtPage.clickProceedToCheckOut();
+        tShirtPage.clickToCart();
         cartPage.deleteFromCart();
-        cartPage.checkDeletedFromCart();
+        //cartPage.checkDeletedFromCart();
+
 
 
 

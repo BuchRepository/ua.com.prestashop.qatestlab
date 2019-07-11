@@ -58,11 +58,8 @@ public class ActionWithOutElements {
 
     public boolean isDisplayed(WebElement element) {
         try {
-            logger.info("Element was displayed");
             return  element.isDisplayed();
         } catch (Exception e) {
-            logger.error("Element can't displayed");
-            Assert.fail("Element can't displayed");
             return false;
         }
     }

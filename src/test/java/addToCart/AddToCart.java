@@ -7,7 +7,7 @@ public class AddToCart extends ParentTest {
 
 
     @Test
-    public void addToCart(){
+    public void addToCart() {
         homePage.openPage();
         homePage.moveToWomenItem();
         homePage.moveToTShirtItemMenu();
@@ -15,12 +15,11 @@ public class AddToCart extends ParentTest {
         tShirtPage.clickList();
         tShirtPage.clickAddToCart();
         tShirtPage.clickProceedToCheckOut();
+        tShirtPage.clickToCart();
 
-
-        checkExpectedResult("Can not find t-shirt in list", true, cartPage.isTShirtInList());
+        checkExpectedResult("Can not find item in list", true, cartPage.isItemInList());
 
     }
-
 
 
 }
