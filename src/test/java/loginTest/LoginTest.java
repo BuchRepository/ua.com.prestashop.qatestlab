@@ -19,8 +19,8 @@ public class LoginTest extends ParentTest {
         loginPage.enterEmailAddressToEmailField();
         loginPage.enterPasswordToPasswordField();
         loginPage.clickToSignIn();
-
-
+        myAccountPage.clickMyPersonalInformation();
+        //checkExpectedResult("MyAccount is not pressent", true, myAccountPage.isMyAccountPresent());
     }
 
 

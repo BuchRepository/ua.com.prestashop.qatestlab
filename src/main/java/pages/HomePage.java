@@ -34,7 +34,7 @@ public class HomePage extends ParentPage {
 
     public void openPage() {
         try {
-            webDriver.get("http://prestashop.qatestlab.com.ua/en/");
+            webDriver.get("http://prestashop.qatestlab.com.ua/");
             logger.info("Login page is opened");
         } catch (Exception e) {
             logger.error("Can't open LoginPage");

@@ -19,6 +19,7 @@ public class ParentTest {
     protected HomePage homePage;
     protected TshirtPage tShirtPage;
     protected CartPage cartPage;
+    protected MyAccount myAccountPage;
 
 
 
@@ -38,6 +39,7 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         tShirtPage = new TshirtPage(webDriver);
         cartPage = new CartPage(webDriver);
+        myAccountPage = new MyAccount(webDriver);
     }
 
     @After
@@ -54,16 +56,6 @@ public class ParentTest {
 ////        checkExpectedResult();
 ////    }
 
-    @Test
-    public void addToCart(){
-        homePage.openPage();
-        homePage.clickToTShirtItemMenu();
-        tShirtPage.clickToFirstTShirt();
-        tShirtPage.clickAddToCart();
-        tShirtPage.checkAddToCart();
-        tShirtPage.clickProceedToCheckOut();
 
-
-    }
 
 }
