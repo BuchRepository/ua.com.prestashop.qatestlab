@@ -1,14 +1,12 @@
-package deleteFromCart;
+package addToCart;
 
-import addToCart.AddToCart;
 import org.junit.Test;
-import pages.ParentPage;
 import parentTest.ParentTest;
 
-public class DeleteFromCart extends ParentTest {
+public class AddToCartTest extends ParentTest {
 
     @Test
-    public void deleteFromCart(){
+    public void addToCart() {
         homePage.openPage();
         homePage.moveToWomenItem();
         homePage.moveToTShirtItemMenu();
@@ -17,16 +15,10 @@ public class DeleteFromCart extends ParentTest {
         tShirtPage.clickAddToCart();
         tShirtPage.clickProceedToCheckOut();
         tShirtPage.clickToCart();
-        cartPage.deleteFromCart();
-        //cartPage.checkDeletedFromCart();
 
-
-
-
-
-
-
-
+        checkExpectedResult("Can not find item in list", true, cartPage.isItemInList());
 
     }
+
+
 }

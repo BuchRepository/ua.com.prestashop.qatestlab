@@ -43,22 +43,25 @@ public class ActionWithOutElements {
             logger.error("Element can't clicked");
             Assert.fail("Element can't clicked");
         }
-
     }
 
-   /* public void isDisplayed(WebElement element) {
+    public void clickToElement(String locator) {
         try {
-            element.isDisplayed();
-            logger.info("Element was displayed");
+            clickToElement(webDriver.findElement(By.xpath(locator)));
+
         } catch (Exception e) {
-            logger.error("Element can't displayed");
-            Assert.fail("Element can't displayed");
+            logger.error("Can't work with element");
+            Assert.fail("Can't work with element");
         }
-    }*/
+    }
+
+
+
 
     public boolean isDisplayed(WebElement element) {
         try {
             return  element.isDisplayed();
+
         } catch (Exception e) {
             return false;
         }

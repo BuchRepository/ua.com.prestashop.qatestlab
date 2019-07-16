@@ -8,7 +8,7 @@ public class MyAccount extends ParentPage{
 
     @FindBy (xpath=".//a[@title='Information']")
     private WebElement myPersonalInformation;
-
+    
     public MyAccount(WebDriver webDriver) {
         super(webDriver, "my-account/");
     }
