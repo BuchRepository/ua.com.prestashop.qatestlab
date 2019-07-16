@@ -25,7 +25,6 @@ public class TshirtPage extends ParentPage{
     private WebElement cross;
 
     @FindBy (xpath= ".//div[@class='shopping_cart']")
-    //@FindBy (xpath = "/html/body/div/div/header/div/div/div/div/div[@class='shopping_cart']")
     private WebElement cart;
 
 

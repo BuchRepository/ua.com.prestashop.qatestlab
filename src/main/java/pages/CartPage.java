@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends ParentPage {
 
-    @FindBy(xpath = ".//a[@title='Delete' and @id='1_1_0_0']")
+    @FindBy(xpath = ".//a[@id='1_1_0_0']")
     private WebElement firstPicDeleteFromCart;
 
     @FindBy(xpath = ".//tr[@id='product_1_1_0_0']")
@@ -20,25 +20,14 @@ public class CartPage extends ParentPage {
 
     public void deleteFromCart() {
         actionsWithOutElements.clickToElement(firstPicDeleteFromCart);
+        logger.info("Item was deleted from cart");
     }
 
-
-    public void checkDeletedFromCart() {
-        actionsWithOutElements.isDisplayed(firstItemInCart);
-    }
 
     public boolean isItemInList() {
-        if (actionsWithOutElements.isDisplayed(firstItemInCart)==true){
-            logger.info("The product is in the cart");
-            return true;
-
-        } else{
-            logger.error("The product wasn't in the cart");
-            Assert.fail("The product wasn't in the cart");
-            return false;
-
-        }
+        return actionsWithOutElements.isDisplayed(firstItemInCart);
     }
+
 
 
 }

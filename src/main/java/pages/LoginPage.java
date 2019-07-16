@@ -18,7 +18,7 @@ public class LoginPage extends ParentPage{
     @FindBy (xpath =".//input[@id='passwd']")
     private WebElement passwordField;
 
-    @FindBy (xpath =".//i[@class='icon-lock left']")
+    @FindBy (xpath =".//button[@id='SubmitLogin']")
     private WebElement signInButton;
 
     public void enterEmailAddressToEmailField() {

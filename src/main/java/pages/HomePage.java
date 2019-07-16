@@ -29,8 +29,14 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//a[@title='Women']")
     private WebElement womenMenuItem;
 
-    @FindBy(xpath = ".//a[@title='Blouses']")
-    private WebElement blousesMenuItem;
+    @FindBy(xpath = ".//div[@id='languages-block-top']")
+    private WebElement changeLanguageDropDown;
+
+
+
+    @FindBy(xpath = ".//div[@class='current' and span='Українська']")
+    private WebElement ukraineLanguageIsCurrent;
+
 
     public void openPage() {
         try {
@@ -53,12 +59,34 @@ public class HomePage extends ParentPage {
         }
     }
 
+    public void clickToChangeLanguage() {
+        actionsWithOutElements.clickToElement(changeLanguageDropDown);
+    }
+
+    public void changeLanguage(String language) {
+        boolean Russian = "Русский".equals(language);
+        boolean English = "English".equals(language);
+
+
+        if (Russian==true) {
+            actionsWithOutElements.clickToElement(changeLanguageDropDown);
+            actionsWithOutElements.clickToElement(".//a[@title='Русский (Russian)']");
+            logger.info("Russian is setted current language");
+        } else if (English == true) {
+            actionsWithOutElements.clickToElement(changeLanguageDropDown);
+            actionsWithOutElements.clickToElement(".//a[@title='English (United States)']");
+            logger.info("English is setted current language");
+        } else  {
+            logger.info("Ukraine is current language");
+        }
+    }
+
     public void clickToTShirtItemMenu() {
 
         actionsWithOutElements.clickToElement(tShirtMenuItem);
     }
 
-    public void moveToWomenItem(){
+    public void moveToWomenItem() {
         //wait10.until(ExpectedConditions.titleIs("Women"));
         actionsWithOutElements.moveToElement(womenMenuItem);
     }
@@ -67,4 +95,8 @@ public class HomePage extends ParentPage {
         actionsWithOutElements.moveToElement(tShirtMenuItem);
     }
 
+
+    public boolean ukraineLanguageIsPresent() {
+        return actionsWithOutElements.isDisplayed(ukraineLanguageIsCurrent);
+    }
 }

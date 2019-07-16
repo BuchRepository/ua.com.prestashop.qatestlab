@@ -1,13 +1,10 @@
 package parentTest;
 
-import addToCart.AddToCart;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import pages.*;
 
 import java.io.File;
@@ -42,6 +39,8 @@ public class ParentTest {
         myAccountPage = new MyAccount(webDriver);
     }
 
+
+
     @After
     public void  after(){
         webDriver.quit();
@@ -51,6 +50,8 @@ public class ParentTest {
         Assert.assertEquals(message, expectedResult, actualResult);
         //webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed()
     }
+
+
 
 //    public void checkExpectedResult (String message, boolean actualResult){
 ////        checkExpectedResult();
