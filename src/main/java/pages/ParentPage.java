@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 abstract public class ParentPage {
     WebDriver webDriver;
     Action action;
+
     Logger logger = Logger.getLogger(getClass());
     ActionWithOutElements actionsWithOutElements;
     final String BASE_URL = "http://prestashop.qatestlab.com.ua/en/";

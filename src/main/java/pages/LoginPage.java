@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import sun.rmi.runtime.Log;
 
 public class LoginPage extends ParentPage{
 
@@ -21,15 +22,34 @@ public class LoginPage extends ParentPage{
     @FindBy (xpath =".//button[@id='SubmitLogin']")
     private WebElement signInButton;
 
-    public void enterEmailAddressToEmailField() {
-        actionsWithOutElements.enterTextToInput(emailAddressField, "adbetnet2016@gmail.com");
+    public void enterEmailAddressToEmailField(String email) {
+        actionsWithOutElements.enterTextToInput(emailAddressField, email);
     }
 
-    public void enterPasswordToPasswordField() {
-        actionsWithOutElements.enterTextToInput(passwordField, "samsung");
+    public void enterPasswordToPasswordField(String pass) {
+        actionsWithOutElements.enterTextToInput(passwordField, pass);
     }
 
     public void clickToSignIn() {
         actionsWithOutElements.clickToElement(signInButton);
     }
+
+    public void openPage() {
+        try{
+            webDriver.get("http://prestashop.qatestlab.com.ua/authentication?back=my-account");
+            logger.info("Login page is opened");
+        } catch (Exception e){
+            logger.error("Can't open LoginPage");
+            Assert.fail("Can't open LoginPage");
+        }
+    }
+
+    public void validsignIn(){
+        openPage();
+        enterEmailAddressToEmailField("adbetnet2016@gmail.com");
+        enterPasswordToPasswordField("samsung");
+        clickToSignIn();
+    }
+
+
 }

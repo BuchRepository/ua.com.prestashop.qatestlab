@@ -15,7 +15,6 @@ public class AddToCartTest extends ParentTest {
         tShirtPage.clickAddToCart();
         tShirtPage.clickProceedToCheckOut();
         tShirtPage.clickToCart();
-
         checkExpectedResult("Can not find item in list", true, cartPage.isItemInList());
 
     }

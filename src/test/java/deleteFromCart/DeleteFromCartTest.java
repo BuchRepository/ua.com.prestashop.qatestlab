@@ -6,7 +6,7 @@ import parentTest.ParentTest;
 public class DeleteFromCartTest extends ParentTest {
 
     @Test
-    public void deleteFromCart(){
+    public void deleteFromCart() {
         homePage.openPage();
         homePage.moveToWomenItem();
         homePage.moveToTShirtItemMenu();
@@ -17,14 +17,6 @@ public class DeleteFromCartTest extends ParentTest {
         tShirtPage.clickToCart();
         cartPage.deleteFromCart();
         checkExpectedResult("Item was find in cart", false, cartPage.isItemInList());
-
-
-
-
-
-
-
-
 
     }
 }

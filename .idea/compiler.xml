@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="prestashop.qatestlab" />
         <module name="ua.com.prestashop.qatestlab" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="prestashop.qatestlab" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

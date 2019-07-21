@@ -17,6 +17,7 @@ public class ParentTest {
     protected TshirtPage tShirtPage;
     protected CartPage cartPage;
     protected MyAccount myAccountPage;
+    protected MyWishlist myWishlist;
 
 
 
@@ -37,6 +38,7 @@ public class ParentTest {
         tShirtPage = new TshirtPage(webDriver);
         cartPage = new CartPage(webDriver);
         myAccountPage = new MyAccount(webDriver);
+        myWishlist = new MyWishlist(webDriver);
     }
 
 
@@ -53,9 +55,7 @@ public class ParentTest {
 
 
 
-//    public void checkExpectedResult (String message, boolean actualResult){
-////        checkExpectedResult();
-////    }
+
 
 
 
