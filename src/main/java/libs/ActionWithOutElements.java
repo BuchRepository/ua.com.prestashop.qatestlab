@@ -67,6 +67,14 @@ public class ActionWithOutElements {
         }
     }
 
+    public boolean isDisplayed(String locator) {
+        try {
+            return isDisplayed(webDriver.findElement(By.xpath(locator)));
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
     public void moveToElement(WebElement element) {
         try {

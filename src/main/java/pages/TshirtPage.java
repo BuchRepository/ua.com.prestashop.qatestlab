@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class TshirtPage extends ParentPage{
 
-    @FindBy (xpath = ".//img[@title='Faded Short Sleeve T-shirts']")
+    @FindBy (xpath = "(.//img[@class='replace-2x img-responsive'])[2]")
     private WebElement firstItemTShirtList;
 
     @FindBy (xpath = ".//a[@class='button ajax_add_to_cart_button btn btn-default' and @data-id-product='1']")
@@ -26,6 +26,9 @@ public class TshirtPage extends ParentPage{
 
     @FindBy (xpath= ".//div[@class='shopping_cart']")
     private WebElement cart;
+
+    @FindBy (xpath = "(.//div[@class='wishlist'])[1]")
+    private WebElement wishlistButton;
 
 
     public TshirtPage(WebDriver webDriver) {
@@ -60,4 +63,19 @@ public class TshirtPage extends ParentPage{
     public void clickToCart() {
         actionsWithOutElements.clickToElement(cart);
     }
+
+    public void clickToWishlistButton() {
+        actionsWithOutElements.clickToElement(wishlistButton);
+    }
+
+    public void moveToFirstItem() {
+        actionsWithOutElements.moveToElement(firstItemTShirtList);
+
+    }
+
+    public String getIdFirstItem() {
+        System.out.println(firstItemTShirtList.getAttribute("title"));
+        return firstItemTShirtList.getAttribute("title");
+    }
+
 }

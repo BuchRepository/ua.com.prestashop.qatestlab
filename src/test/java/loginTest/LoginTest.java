@@ -1,14 +1,7 @@
 package loginTest;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import parentTest.ParentTest;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class LoginTest extends ParentTest {
 
@@ -16,11 +9,10 @@ public class LoginTest extends ParentTest {
     public void validLogin() {
         homePage.openPage();
         homePage.clickOnSignOn();
-        loginPage.enterEmailAddressToEmailField();
-        loginPage.enterPasswordToPasswordField();
+        loginPage.enterEmailAddressToEmailField("adbetnet2016@gmail.com");
+        loginPage.enterPasswordToPasswordField("samsung");
         loginPage.clickToSignIn();
-        myAccountPage.clickMyPersonalInformation();
-        //checkExpectedResult("MyAccount is not pressent", true, myAccountPage.isMyAccountPresent());
+        checkExpectedResult("MyAccount is not pressent", true, myAccountPage.isPresentOnMyPersonalInformationPage("adbetnet2016@gmail.com"));
     }
 
 

@@ -23,8 +23,10 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//a[@class=\"login\"]")
     private WebElement signIn;
 
-    @FindBy(xpath = ".//a[@title='T-shirts']")
+    @FindBy(xpath = "(.//a[@title='T-shirts'])[2]")
     private WebElement tShirtMenuItem;
+
+
 
     @FindBy(xpath = ".//a[@title='Women']")
     private WebElement womenMenuItem;
@@ -33,9 +35,17 @@ public class HomePage extends ParentPage {
     private WebElement changeLanguageDropDown;
 
 
-
     @FindBy(xpath = ".//div[@class='current' and span='Українська']")
     private WebElement ukraineLanguageIsCurrent;
+
+    @FindBy(xpath = "(.//span[contains(text(),'Quick view')])[1]")
+    private WebElement somePopularItem;
+
+    @FindBy(xpath = "(.//a[@class='product_img_link'])[1]")
+    private WebElement firstPopularItem;
+
+    @FindBy (xpath = ".//a[@id='wishlist_button']")
+    private WebElement wishlistButton;
 
 
     public void openPage() {
@@ -64,22 +74,30 @@ public class HomePage extends ParentPage {
     }
 
     public void changeLanguage(String language) {
-        boolean Russian = "Русский".equals(language);
-        boolean English = "English".equals(language);
+        String currentLanguage = changeLanguageDropDown.getText();
+        System.out.println(changeLanguageDropDown.getText());
 
-
-        if (Russian==true) {
-            actionsWithOutElements.clickToElement(changeLanguageDropDown);
-            actionsWithOutElements.clickToElement(".//a[@title='Русский (Russian)']");
-            logger.info("Russian is setted current language");
-        } else if (English == true) {
+        if (currentLanguage.equals(language)) {
+            logger.info(language + " has been already selected");
+            System.out.println(language + " has been already selected");
+        } else if (language.equals("English")) {
             actionsWithOutElements.clickToElement(changeLanguageDropDown);
             actionsWithOutElements.clickToElement(".//a[@title='English (United States)']");
-            logger.info("English is setted current language");
-        } else  {
-            logger.info("Ukraine is current language");
+            logger.info("English is selected current's language");
+        } else if (language.equals("Русский")) {
+            actionsWithOutElements.clickToElement(changeLanguageDropDown);
+            actionsWithOutElements.clickToElement(".//a[@title='Русский (Russian)']");
+            logger.info("Russian is selected current's language");
+        } else if (language.equals("Українська")) {
+            actionsWithOutElements.clickToElement(changeLanguageDropDown);
+            actionsWithOutElements.clickToElement(".//a[@title='Українська (Ukrainian)']");
+            logger.info("Ukrainian is selected current's language");
+            System.out.println("Ukrainian is selected current's language");
+        } else {
+            logger.error("You inputted wrong language ");
         }
     }
+
 
     public void clickToTShirtItemMenu() {
 
@@ -99,4 +117,17 @@ public class HomePage extends ParentPage {
     public boolean ukraineLanguageIsPresent() {
         return actionsWithOutElements.isDisplayed(ukraineLanguageIsCurrent);
     }
+
+    public void clickToSomePopularItem() {
+    actionsWithOutElements.clickToElement(somePopularItem);
+    }
+
+    public void moveToFirstPopularItem() {
+        actionsWithOutElements.moveToElement(firstPopularItem);
+    }
+
+    public void clickToWishlistButton() {
+        actionsWithOutElements.clickToElement(wishlistButton);
+    }
+
 }
