@@ -15,12 +15,13 @@ public class AddToWishlist extends ParentTest {
         homePage.moveToFirstPopularItem();
         homePage.clickToSomePopularItem();
         homePage.clickToWishlistButton();  */
-
         loginPage.validsignIn();
         homePage.clickToTShirtItemMenu();
         tShirtPage.clickList();
         tShirtPage.moveToFirstItem();
         tShirtPage.clickToWishlistButton();
+        tShirtPage.clickCloseAddedNotification();
+        tShirtPage.clickToMyAccount();
         myAccountPage.checkAddedItemToWishlist();
         myWishlist.clickViewWishlist();
 
