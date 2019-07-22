@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAccount extends ParentPage {
 
-    @FindBy(xpath = "(.//i[@class='icon-building'])[3]")
+    @FindBy(xpath = "(.//i[@class='icon-building'])[2]")
     private WebElement myPersonalInformation;
 
     @FindBy(xpath = ".//input[@id='email']")
@@ -17,7 +17,7 @@ public class MyAccount extends ParentPage {
     private WebElement myWishlist;
 
     public MyAccount(WebDriver webDriver) {
-        super(webDriver, "my-account/");
+        super(webDriver, "my-account");
     }
 
    /* public void clickMyPersonalInformation() {
@@ -26,7 +26,6 @@ public class MyAccount extends ParentPage {
 
     public boolean isPresentOnMyPersonalInformationPage(String login) {
         actionsWithOutElements.clickToElement(myPersonalInformation);
-        System.out.println(emailAddressField.getAttribute("value"));
 
         if (emailAddressField.getAttribute("value").equals(login)) {
             logger.info(login + " is presented on \"My Personal Information\" page");

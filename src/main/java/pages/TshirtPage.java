@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class TshirtPage extends ParentPage{
 
-    @FindBy (xpath = "(.//img[@class='replace-2x img-responsive'])[2]")
+    @FindBy (xpath = "(//a[@class='product_img_link'] //img[@class='replace-2x img-responsive']) [1]")
     private WebElement firstItemTShirtList;
 
     @FindBy (xpath = ".//a[@class='button ajax_add_to_cart_button btn btn-default' and @data-id-product='1']")
@@ -29,6 +29,12 @@ public class TshirtPage extends ParentPage{
 
     @FindBy (xpath = "(.//div[@class='wishlist'])[1]")
     private WebElement wishlistButton;
+
+    @FindBy(xpath = ".//a[@class='fancybox-item fancybox-close']")
+    private WebElement closeAddedWishlistWindow;
+
+    @FindBy(xpath = ".//a[@class='account']")
+    private WebElement myAccountItem;
 
 
     public TshirtPage(WebDriver webDriver) {
@@ -70,12 +76,17 @@ public class TshirtPage extends ParentPage{
 
     public void moveToFirstItem() {
         actionsWithOutElements.moveToElement(firstItemTShirtList);
-
     }
 
     public String getIdFirstItem() {
-        System.out.println(firstItemTShirtList.getAttribute("title"));
         return firstItemTShirtList.getAttribute("title");
     }
 
+    public void clickCloseAddedNotification() {
+        actionsWithOutElements.clickToElement(closeAddedWishlistWindow);
+    }
+
+    public void clickToMyAccount() {
+        actionsWithOutElements.clickToElement(myAccountItem);
+    }
 }
